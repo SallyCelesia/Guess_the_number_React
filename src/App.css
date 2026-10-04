@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg,#e0f2fe,#f5f3ff,#fce7f3);
+}
+
+/* Glass card */
+.game-card {
+  width: 380px;
+  padding: 35px;
+  margin: 0 10px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 25px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.subtitle, .question {
+  color: #555;
+}
+.subtitle{
+  font-size: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 13px;
+  margin: 20px 0;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.start-btn,
+.reset-btn {
+  width: 100%;
+  padding: 13px;
+  background: #6366f1;
+  color: white;
+}
+
+.attempts {
+  margin: 20px 0;
+  color: #555;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.option-btn {
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #333;
+  font-weight: bold;
+}
+
+.option-btn:hover {
+  background: white;
+}
+
+.option-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Top-center toast */
+
+.toast {
+  position: fixed;
+  width: 280px;
+  text-align: center;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 25px;
+  border-radius: 12px;
+
+  /* Light green glass */
+  background: rgba(220, 252, 231, 0.85);
+  border: 1px solid rgba(134, 239, 172, 0.6);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  font-weight: bold;
+  color: #166534;
+  z-index: 10;
+}
+
+/* Play Again CTA */
+
+.reset-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  background: #6366f1;
+  color: white;
+  animation: ctaBounce 1.2s ease-in-out infinite;
+}
+
+@keyframes ctaBounce {
+  0%,  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(4px);
+  }
+}
